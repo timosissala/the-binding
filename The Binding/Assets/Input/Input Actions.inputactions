@@ -1,0 +1,79 @@
+{
+    "name": "Input Actions",
+    "maps": [
+        {
+            "name": "Mouse",
+            "id": "79bda270-600c-48ba-bf83-9399dc3dcc4d",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Value",
+                    "id": "a1e323b4-2468-483e-b67d-6c27a3a74bf5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Position",
+                    "type": "Value",
+                    "id": "0c9da523-a6d0-4bfc-96e3-c2a64647d060",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "af72fe0a-752b-4106-99a4-9f54062af3ee",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d765b05d-0334-4c87-acbb-39d628439b14",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "id": "b03dec5a-84c1-43b7-8200-56535567392b",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d32744b4-b392-46b2-a8ff-6cdbfc64cad3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d5247f6d-7126-4858-bfa3-8dd754943924",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
