@@ -28,6 +28,10 @@ public class PlayerMovement : Movement
 
             gameData.playerWorldPosition = transform.position;
         }
+        else if (Time.timeSinceLevelLoad > 0.7f)
+        {
+            animatorController.StartIdleAnimation();
+        }
     }
 
     public void Interact(CallbackContext callbackContext)

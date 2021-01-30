@@ -7,6 +7,9 @@ public class MonsterMovement : Movement
 {
     private PathFinder pathFinder;
 
+    [SerializeField]
+    private float monsterWaitTime = 1.0f;
+
     private enum MovementMode
     {
         DoNothing,
@@ -26,7 +29,7 @@ public class MonsterMovement : Movement
 
     private void Update()
     {
-        if (isMoving)
+        if (isMoving && Time.timeSinceLevelLoad > monsterWaitTime)
         {
             if (movementMode == MovementMode.ChasePlayer)
             {
@@ -48,7 +51,9 @@ public class MonsterMovement : Movement
         Vector3Int tilemapPos = gameData.WorldToTIlePosition(transform.position, gameData.groundMap);
         Vector3Int tilemapPlayerPos = gameData.WorldToTIlePosition(gameData.playerWorldPosition, gameData.groundMap);
 
-        rb.velocity = (Vector2)pathFinder.GetTargetDirection(new Vector2Int(tilemapPos.x, tilemapPos.y), new Vector2Int(tilemapPlayerPos.x, tilemapPlayerPos.y)) * maxSpeed;
-        Debug.Log(rb.velocity);
+        Vector2 targetDirection = pathFinder.GetTargetDirection(new Vector2Int(tilemapPos.x, tilemapPos.y), new Vector2Int(tilemapPlayerPos.x, tilemapPlayerPos.y));
+        targetDirection = gameData.groundMap.CellToWorld(new Vector3Int((int)targetDirection.x, (int)targetDirection.y, 0));
+
+        rb.velocity = targetDirection * maxSpeed;
     }
 }

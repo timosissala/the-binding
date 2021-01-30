@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWorldPosition: {x: 0, y: 0}
   pickupWorldPositions: []
+  groundMap: {fileID: 0}
+  terrainMap: {fileID: 0}
+  objectMap: {fileID: 0}
+  groundTilePositions: []
+  terrainTIlePositions: []
+  objectTilePositions: []

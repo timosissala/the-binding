@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 3652742756609247419}
   - component: {fileID: 7036094244014446479}
   - component: {fileID: 8629248246700660949}
+  - component: {fileID: 1685576523}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -428,8 +429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 7a09b85f645f2d7459673677ade3d9ae, type: 2}
-  maxSpeed: 1
-  moveSensitivity: 0.3
+  maxSpeed: 10
+  moveSensitivity: 0.5
+  animatorController: {fileID: 8070336563076820572}
   camera: {fileID: 3652742757341554942}
 --- !u!50 &8629248246700660949
 Rigidbody2D:
@@ -452,6 +454,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &1685576523
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652742756609247416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3652742757111645204
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +519,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Radius: 0.3
 --- !u!1 &3652742757341554941
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +765,7 @@ GameObject:
   - component: {fileID: 6351702268959740200}
   - component: {fileID: 3848977055665485327}
   - component: {fileID: 280361018411586839}
+  - component: {fileID: 8070336563076820572}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -835,6 +857,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8070336563076820572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744511121775410522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c39b7cae4b3484383392e76332bf0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 280361018411586839}
+  defaultState: {fileID: 7400000, guid: 38ecbbe9a8092b84aa4221ae158d3c06, type: 2}
 --- !u!1 &8126591375481217688
 GameObject:
   m_ObjectHideFlags: 0
