@@ -55,8 +55,6 @@ public class Movement : MonoBehaviour
         float moveSpeed = distanceToMouse * maxSpeed * moveSensitivity;
         float clampedSpeed = moveSpeed < maxSpeed ? moveSpeed : maxSpeed;
 
-        Debug.Log(clampedSpeed);
-
         rb.velocity = Vector2.MoveTowards(transform.position, target, clampedSpeed) - (Vector2)transform.position;
     }
 }
