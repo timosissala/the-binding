@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialoguePanel : MonoBehaviour
@@ -14,6 +15,8 @@ public class DialoguePanel : MonoBehaviour
 
     [SerializeField]
     private float textDelay = 0.05f;
+
+    public UnityEvent OnDialogueFinished;
 
     public void StartDialogue(string text, Sprite iconSprite = null)
     {
@@ -39,6 +42,8 @@ public class DialoguePanel : MonoBehaviour
 
             yield return new WaitForSeconds(textDelay);
         }
+
+        OnDialogueFinished?.Invoke();
     }
 
     private void ClearText()

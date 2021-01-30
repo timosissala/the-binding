@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be20871c810ed04a96552b0e0ab9014, type: 3}
   m_Name: Dialogue Data
   m_EditorClassIdentifier: 
-  dialogues:
-  - name: Dialogue 1
-    text: Hello. Why are you reading this. What the fuck is wrong with you. Stop
-      reading this. This is useless. Fuck you
-    icon: {fileID: 21300000, guid: 7a8833a72f28ed94fbf4193ee1e7d53c, type: 3}
+  dialogueSequences:
+  - name: Awakening
+    dialogues:
+    - text: Huh. Where am I?...
+      icon: {fileID: 0}
+    - text: What is this place?
+      icon: {fileID: 0}

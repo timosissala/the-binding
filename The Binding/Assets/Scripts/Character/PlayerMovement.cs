@@ -10,6 +10,8 @@ public class PlayerMovement : Movement
 
     private Vector2 mouseWorldPos;
 
+    private bool allowInput = false;
+
     private void Awake()
     {
         if (camera == null)
@@ -20,7 +22,7 @@ public class PlayerMovement : Movement
 
     private void Update()
     {
-        if (isMoving && mouseWorldPos != null)
+        if (isMoving && mouseWorldPos != null && allowInput)
         {
             MoveTowards(mouseWorldPos);
 
@@ -38,5 +40,10 @@ public class PlayerMovement : Movement
     public void MousePosition(CallbackContext callbackContext)
     {
         mouseWorldPos = camera.ScreenToWorldPoint(callbackContext.ReadValue<Vector2>());
+    }
+
+    public void ToggleMovement(bool enabled)
+    {
+        allowInput = enabled;
     }
 }
