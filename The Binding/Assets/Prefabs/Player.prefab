@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3652742756609247421}
   - component: {fileID: 3652742756609247418}
   - component: {fileID: 3652742756609247419}
-  - component: {fileID: 3652742756609247420}
+  - component: {fileID: 7036094244014446479}
   - component: {fileID: 8629248246700660949}
   m_Layer: 8
   m_Name: Player
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3652742756609247420}
+      - m_Target: {fileID: 7036094244014446479}
         m_MethodName: Interact
         m_Mode: 0
         m_Arguments:
@@ -235,7 +235,7 @@ MonoBehaviour:
     m_ActionName: Keyboard/New action
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3652742756609247420}
+      - m_Target: {fileID: 7036094244014446479}
         m_MethodName: MousePosition
         m_Mode: 0
         m_Arguments:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_DefaultActionMap: Mouse
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 3652742757341554942}
---- !u!114 &3652742756609247420
+--- !u!114 &7036094244014446479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,10 +262,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3652742756609247416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1580b99295f354d853fd11b233e3bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d3cb328c7be9ba44b02bf4563ac7fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  gameData: {fileID: 11400000, guid: 7a09b85f645f2d7459673677ade3d9ae, type: 2}
+  maxSpeed: 1
   moveSensitivity: 0.3
   camera: {fileID: 3652742757341554942}
 --- !u!50 &8629248246700660949
@@ -287,7 +288,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &3652742757111645204
 GameObject:

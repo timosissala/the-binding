@@ -3,26 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : Movement
 {
-    private Rigidbody2D rb;
-
-    [SerializeField]
-    private float maxSpeed = 0.05f;
-
-    [SerializeField, Range(0.1f, 1.0f)]
-    private float moveSensitivity = 0.3f;
-
     [SerializeField]
     private new Camera camera;
 
-    private bool isMoving;
     private Vector2 mouseWorldPos;
 
-    private void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
         if (camera == null)
         {
             camera = FindObjectOfType<Camera>();
@@ -34,6 +23,8 @@ public class Movement : MonoBehaviour
         if (isMoving && mouseWorldPos != null)
         {
             MoveTowards(mouseWorldPos);
+
+            gameData.playerWorldPosition = transform.position;
         }
     }
 
@@ -47,14 +38,5 @@ public class Movement : MonoBehaviour
     public void MousePosition(CallbackContext callbackContext)
     {
         mouseWorldPos = camera.ScreenToWorldPoint(callbackContext.ReadValue<Vector2>());
-    }
-
-    public void MoveTowards(Vector2 target)
-    {
-        float distanceToMouse = Vector2.Distance(transform.position, target);
-        float moveSpeed = distanceToMouse * maxSpeed * moveSensitivity;
-        float clampedSpeed = moveSpeed < maxSpeed ? moveSpeed : maxSpeed;
-
-        rb.velocity = Vector2.MoveTowards(transform.position, target, clampedSpeed) - (Vector2)transform.position;
     }
 }
