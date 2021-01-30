@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 05f982687e0ed5d47ab3c9dbef7c8404
+guid: b315b0fbfe3f0494e9be6586e9b5f92b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8559306581729617750
-    second: awakening-sprite_0
+      213: 815424164945274260
+    second: IDLE_0
   - first:
-      213: -2357935026157822477
-    second: awakening-sprite_1
+      213: -270785710348516584
+    second: IDLE_1
   - first:
-      213: -3484202146672226679
-    second: awakening-sprite_2
+      213: 8443794771774750484
+    second: IDLE_2
   - first:
-      213: -7113591131225869259
-    second: awakening-sprite_3
+      213: 1777182293076053196
+    second: IDLE_3
   - first:
-      213: -4220367397622958721
-    second: awakening-sprite_4
+      213: 6114163804962241700
+    second: IDLE_4
   - first:
-      213: 7825230361791082773
-    second: awakening-sprite_5
-  - first:
-      213: 2517867158942690124
-    second: awakening-sprite_6
-  - first:
-      213: -2219329794981418110
-    second: awakening-sprite_7
-  - first:
-      213: 954041512721879957
-    second: awakening-sprite_8
-  - first:
-      213: 5628361608962050409
-    second: awakening-sprite_9
+      213: -7154528564402915179
+    second: IDLE_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: awakening-sprite_0
+      name: IDLE_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
-        width: 500
-        height: 500
+        y: 353
+        width: 269
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa8d758530c373980800000000000000
-      internalID: -8559306581729617750
+      spriteID: 49525dc25f7f05b00800000000000000
+      internalID: 815424164945274260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: awakening-sprite_1
+      name: IDLE_1
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
+        x: 269
+        y: 353
+        width: 269
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd596a269ee64fd0800000000000000
-      internalID: -2357935026157822477
+      spriteID: 813cc64c4d9fd3cf0800000000000000
+      internalID: -270785710348516584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: awakening-sprite_2
+      name: IDLE_2
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 500
-        height: 500
+        x: 538
+        y: 353
+        width: 269
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,125 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98ec2f19b90a5afc0800000000000000
-      internalID: -3484202146672226679
+      spriteID: 41f3fe79b926e2570800000000000000
+      internalID: 8443794771774750484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: awakening-sprite_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 534b9e93e82774d90800000000000000
-      internalID: -7113591131225869259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: awakening-sprite_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f753b0b563e3e65c0800000000000000
-      internalID: -4220367397622958721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: awakening-sprite_5
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 511b820ed8dc89c60800000000000000
-      internalID: 7825230361791082773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: awakening-sprite_6
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4ba66047d241f220800000000000000
-      internalID: 2517867158942690124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: awakening-sprite_7
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28b21ba5f4b5331e0800000000000000
-      internalID: -2219329794981418110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: awakening-sprite_8
+      name: IDLE_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 269
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59393ca73bf6d3d00800000000000000
-      internalID: 954041512721879957
+      spriteID: ccc89ef21e1d9a810800000000000000
+      internalID: 1777182293076053196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: awakening-sprite_9
+      name: IDLE_4
       rect:
         serializedVersion: 2
-        x: 500
+        x: 269
         y: 0
-        width: 500
-        height: 500
+        width: 269
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96901a12015fb1e40800000000000000
-      internalID: 5628361608962050409
+      spriteID: 4ac335d169fd9d450800000000000000
+      internalID: 6114163804962241700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDLE_5
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 0
+        width: 269
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598f06f4d2206bc90800000000000000
+      internalID: -7154528564402915179
       vertices: []
       indices: 
       edges: []

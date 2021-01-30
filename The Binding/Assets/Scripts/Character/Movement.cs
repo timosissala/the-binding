@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void SetMoveAnimation(Vector2 velocity)
+    protected void SetMoveAnimation(Vector2 velocity)
     {
         if (animatorController != null)
         {

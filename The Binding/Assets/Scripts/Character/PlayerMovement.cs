@@ -28,7 +28,7 @@ public class PlayerMovement : Movement
 
             gameData.playerWorldPosition = transform.position;
         }
-        else if (Time.timeSinceLevelLoad > 0.7f)
+        else if (Time.timeSinceLevelLoad > 2.0f)
         {
             animatorController.StartIdleAnimation();
         }

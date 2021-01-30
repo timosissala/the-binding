@@ -8,12 +8,21 @@ public class MonsterMovement : Movement
     private PathFinder pathFinder;
 
     [SerializeField]
+    private List<Transform> patrolPoints;
+    private int patrolIndex;
+    private Vector2 patrolTarget;
+
+    [SerializeField]
     private float monsterWaitTime = 1.0f;
+
+    [SerializeField]
+    private float playerDetectRadius = 2.5f;
 
     private enum MovementMode
     {
         DoNothing,
         ChasePlayer,
+        Patrol,
         RoamAimlessly
     }
 
@@ -24,26 +33,51 @@ public class MonsterMovement : Movement
         pathFinder = new PathFinder(gameData.groundMap);
         isMoving = true;
 
-        movementMode = MovementMode.ChasePlayer;
+        movementMode = MovementMode.Patrol;
+        patrolIndex = 0;
     }
 
     private void Update()
     {
         if (isMoving && Time.timeSinceLevelLoad > monsterWaitTime)
         {
-            if (movementMode == MovementMode.ChasePlayer)
+            DecideMovement();
+
+            if (Vector2.Distance(transform.position, gameData.playerWorldPosition) < playerDetectRadius)
             {
-                Vector2 playerPos = gameData.playerWorldPosition;
-                if (playerPos != null)
-                {
-                    MoveTowardsPlayer();
-                }
-            }
-            else if (movementMode == MovementMode.RoamAimlessly)
-            {
-                
+                movementMode = MovementMode.ChasePlayer;
             }
         }
+    }
+
+    private void DecideMovement()
+    {
+        if (movementMode == MovementMode.ChasePlayer)
+        {
+            Vector2 playerPos = gameData.playerWorldPosition;
+            if (playerPos != null)
+            {
+                MoveTowardsPlayer();
+            }
+        }
+        else if (movementMode == MovementMode.Patrol)
+        {
+            Patrol();
+        }
+    }
+
+    private void Patrol()
+    {
+        if (patrolTarget == null || Vector2.Distance(transform.position, patrolTarget) < 0.2f)
+        {
+            patrolIndex = patrolIndex < patrolPoints.Count - 1 ? patrolIndex + 1 : 0;
+
+            patrolTarget = patrolPoints[patrolIndex].position;
+        }
+
+        Debug.Log(patrolTarget);
+
+        MoveTowards(patrolTarget);
     }
 
     private void MoveTowardsPlayer()
@@ -53,6 +87,8 @@ public class MonsterMovement : Movement
 
         Vector2 targetDirection = pathFinder.GetTargetDirection(new Vector2Int(tilemapPos.x, tilemapPos.y), new Vector2Int(tilemapPlayerPos.x, tilemapPlayerPos.y));
         targetDirection = gameData.groundMap.CellToWorld(new Vector3Int((int)targetDirection.x, (int)targetDirection.y, 0));
+
+        SetMoveAnimation(targetDirection);
 
         rb.velocity = targetDirection * maxSpeed;
     }
