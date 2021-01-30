@@ -26,8 +26,19 @@ public class Movement : MonoBehaviour
     {
         float distanceToTarget = Vector2.Distance(transform.position, target);
         float moveSpeed = distanceToTarget * maxSpeed * moveSensitivity;
-        float clampedSpeed = moveSpeed < maxSpeed ? moveSpeed : maxSpeed;
 
-        rb.velocity = Vector2.MoveTowards(transform.position, target, clampedSpeed) - (Vector2)transform.position;
+        rb.velocity = Vector2.MoveTowards(transform.position, target, ClampSpeed(moveSpeed)) - (Vector2)transform.position;
+    }
+
+    public void MoveTowardsMaxSpeed(Vector2 target)
+    {
+        float moveSpeed = maxSpeed;
+
+        rb.velocity = Vector2.MoveTowards(transform.position, target, moveSpeed) - (Vector2)transform.position;
+    }
+
+    private float ClampSpeed(float speed)
+    {
+        return speed < maxSpeed ? speed : maxSpeed;
     }
 }
