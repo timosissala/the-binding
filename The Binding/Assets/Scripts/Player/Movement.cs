@@ -52,10 +52,9 @@ public class Movement : MonoBehaviour
     public void MoveTowards(Vector2 target)
     {
         float distanceToMouse = Vector2.Distance(transform.position, target);
-        float moveSpeed = distanceToMouse * maxSpeed * moveSensitivity < maxSpeed ? distanceToMouse * maxSpeed * moveSensitivity : maxSpeed;
+        float moveSpeed = distanceToMouse * maxSpeed * moveSensitivity;
+        float clampedSpeed = moveSpeed < maxSpeed ? moveSpeed : maxSpeed;
 
-        Debug.Log(moveSpeed);
-
-        transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed);
+        rb.velocity = Vector2.MoveTowards(transform.position, target, clampedSpeed) - (Vector2)transform.position;
     }
 }
