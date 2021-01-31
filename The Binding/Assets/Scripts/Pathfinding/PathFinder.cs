@@ -12,8 +12,8 @@ public class PathFinder {
     private int yMin;
     private int xMin;
 
-    public PathFinder(Tilemap groundTiles) {
-        InitialiseNodes(groundTiles);
+    public PathFinder(Tilemap groundTiles, Tilemap terrainTiles) {
+        InitialiseNodes(groundTiles, terrainTiles);
     }
 
     public Vector2Int GetTargetDirection(Vector2Int position, Vector2Int target) {
@@ -120,7 +120,7 @@ public class PathFinder {
         return neighbourNodes;
     }
 
-    public void InitialiseNodes(Tilemap tileMap)
+    public void InitialiseNodes(Tilemap tileMap, Tilemap terrain)
     {
         yMin = tileMap.cellBounds.yMin;
         int yMax = tileMap.cellBounds.yMax;
@@ -136,7 +136,7 @@ public class PathFinder {
             {
                 Vector3Int localPlace = new Vector3Int(n, p, (int)tileMap.transform.position.y);
 
-                if (tileMap.HasTile(localPlace))
+                if (tileMap.HasTile(localPlace) && !terrain.HasTile(localPlace))
                 {
                     //Tile at "place"
                     nodes[p - yMin, n - xMin] = new Node(n, p);
