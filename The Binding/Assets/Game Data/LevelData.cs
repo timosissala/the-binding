@@ -15,6 +15,9 @@ public class LevelData : ScriptableObject
     public Data[] Levels { get { return levels; } }
 
     [SerializeField]
+    public int currentLevel;
+
+    [SerializeField]
     private string defaultLevel = null;
     public string DefaultLevel { get { return defaultLevel; } }
 

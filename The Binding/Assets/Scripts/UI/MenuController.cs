@@ -98,7 +98,10 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(levelData.currentLevel);
+    }
 
     public void LoadLevel(int index)
     {

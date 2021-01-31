@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerMovement : Movement
@@ -12,6 +13,9 @@ public class PlayerMovement : Movement
     [SerializeField]
     private TorchController torchController;
 
+    [SerializeField]
+    private LevelData levelData;
+
     private Vector2 mouseWorldPos;
 
     private Vector2 movementAxis;
@@ -20,6 +24,9 @@ public class PlayerMovement : Movement
     private bool isAlive = true;
 
     public UnityEvent OnDeath;
+
+    [SerializeField]
+    private DialogueManager dialogueManager;
 
     private void Awake()
     {
@@ -33,11 +40,11 @@ public class PlayerMovement : Movement
 
     private void Update()
     {
-        if (mouseMovement && mouseWorldPos != null && allowInput && isAlive)
+        if (mouseMovement && mouseWorldPos != null && allowInput && isAlive && !dialogueManager.dialogueOnGoing)
         {
             MoveTowards(mouseWorldPos);
         }
-        else if (movementAxis.magnitude > 0 && isAlive)
+        else if (movementAxis.magnitude > 0 && isAlive && allowInput && !dialogueManager.dialogueOnGoing)
         {
             Move(movementAxis);
         }
@@ -91,6 +98,26 @@ public class PlayerMovement : Movement
         else if (collision.tag == "Monster")
         {
             Die();
+        }
+        else if (collision.tag == "Exit")
+        {
+            NextLevel();
+        }
+    }
+
+    private void NextLevel()
+    {
+        int nextLevelIndex = levelData.currentLevel + 1;
+
+        if (levelData.Levels.Length - 1 > nextLevelIndex)
+        {
+            levelData.currentLevel = nextLevelIndex;
+            SceneManager.LoadScene(levelData.Levels[nextLevelIndex].levelName);
+        }
+        else
+        {
+            levelData.currentLevel = 0;
+            SceneManager.LoadScene(levelData.MainMenu);
         }
     }
 }
