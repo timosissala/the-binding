@@ -16,7 +16,13 @@ public class MonsterMovement : Movement
     private float monsterWaitTime = 1.0f;
 
     [SerializeField]
-    private float playerDetectRadius = 2.5f;
+    private float playerDetectRadius = 2.0f;
+
+    [SerializeField]
+    private float chaseSpeed = 15.0f;
+
+    [SerializeField]
+    private float patrolSpeed = 7.0f;
 
     private enum MovementMode
     {
@@ -31,7 +37,6 @@ public class MonsterMovement : Movement
     private void Start()
     {
         pathFinder = new PathFinder(gameData.groundMap, gameData.terrainMap);
-        mouseMovement = true;
 
         movementMode = MovementMode.Patrol;
         patrolIndex = 0;
@@ -39,7 +44,7 @@ public class MonsterMovement : Movement
 
     private void Update()
     {
-        if (mouseMovement && Time.timeSinceLevelLoad > monsterWaitTime)
+        if (Time.timeSinceLevelLoad > monsterWaitTime)
         {
             DecideMovement();
 
@@ -68,19 +73,23 @@ public class MonsterMovement : Movement
 
     private void Patrol()
     {
-        if (patrolTarget == null || Vector2.Distance(transform.position, patrolTarget) < 0.2f)
+        maxSpeed = patrolSpeed;
+
+        if ((patrolTarget.x == 0 && patrolTarget.y ==  0) || Vector2.Distance(transform.position, patrolTarget) < 0.2f)
         {
             patrolIndex = patrolIndex < patrolPoints.Count - 1 ? patrolIndex + 1 : 0;
 
             patrolTarget = patrolPoints[patrolIndex].position;
         }
 
-        MoveTowards(patrolTarget);
+        Debug.Log(patrolTarget);
+
+        Move(new Vector2(patrolTarget.x - transform.position.x, patrolTarget.y - transform.position.y).normalized);
     }
 
     private void MoveTowardsPlayer()
     {
-        maxSpeed = 15.0f;
+        maxSpeed = chaseSpeed;
 
         Vector3Int tilemapPos = gameData.WorldToTilePosition(transform.position, gameData.groundMap);
         Vector3Int tilemapPlayerPos = gameData.WorldToTilePosition(gameData.playerWorldPosition, gameData.groundMap);
