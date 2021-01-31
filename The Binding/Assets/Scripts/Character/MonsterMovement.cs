@@ -80,8 +80,10 @@ public class MonsterMovement : Movement
 
     private void MoveTowardsPlayer()
     {
-        Vector3Int tilemapPos = gameData.WorldToTIlePosition(transform.position, gameData.groundMap);
-        Vector3Int tilemapPlayerPos = gameData.WorldToTIlePosition(gameData.playerWorldPosition, gameData.groundMap);
+        maxSpeed = 15.0f;
+
+        Vector3Int tilemapPos = gameData.WorldToTilePosition(transform.position, gameData.groundMap);
+        Vector3Int tilemapPlayerPos = gameData.WorldToTilePosition(gameData.playerWorldPosition, gameData.groundMap);
 
         Vector2 targetDirection = pathFinder.GetTargetDirection(new Vector2Int(tilemapPos.x, tilemapPos.y), new Vector2Int(tilemapPlayerPos.x, tilemapPlayerPos.y));
         targetDirection = gameData.groundMap.CellToWorld(new Vector3Int((int)targetDirection.x, (int)targetDirection.y, 0));

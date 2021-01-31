@@ -17,5 +17,18 @@ MonoBehaviour:
     dialogues:
     - text: Huh. Where am I?...
       icon: {fileID: 0}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
     - text: What is this place?
       icon: {fileID: 0}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: Dozed Off
+    dialogues:
+    - text: Huh. I dozed off again..
+      icon: {fileID: 0}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []

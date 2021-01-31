@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  dialogueData: {fileID: 11400000, guid: 8e16a44ae0e53fa499c2f75735990895, type: 2}
+  levelStartDialogue: 
 --- !u!114 &3433128894288316989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,4 +63,3 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 7a09b85f645f2d7459673677ade3d9ae, type: 2}
   groundMap: {fileID: 0}
   terrainMap: {fileID: 0}
-  objectMap: {fileID: 0}

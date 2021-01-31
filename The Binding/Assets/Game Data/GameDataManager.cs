@@ -14,11 +14,8 @@ public class GameDataManager : MonoBehaviour
     [SerializeField]
     private Tilemap terrainMap;
 
-    [SerializeField]
-    private Tilemap objectMap;
-
     private void Awake()
     {
-        gameData.InitialiseTilemapDatas(groundMap, terrainMap, objectMap);
+        gameData.InitialiseTilemapDatas(groundMap, terrainMap);
     }
 }
