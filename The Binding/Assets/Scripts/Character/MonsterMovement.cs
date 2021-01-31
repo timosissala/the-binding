@@ -30,7 +30,7 @@ public class MonsterMovement : Movement
 
     private void Start()
     {
-        pathFinder = new PathFinder(gameData.groundMap);
+        pathFinder = new PathFinder(gameData.groundMap, gameData.terrainMap);
         mouseMovement = true;
 
         movementMode = MovementMode.Patrol;
