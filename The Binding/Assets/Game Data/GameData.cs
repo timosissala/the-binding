@@ -8,21 +8,21 @@ public class GameData : ScriptableObject
 {
     public Vector2 playerWorldPosition = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
 
-    public List<Vector2> pickupWorldPositions;
-
     public Tilemap groundMap;
     public Tilemap terrainMap;
 
     public List<Vector2Int> groundTilePositions;
-    public List<Vector2Int> terrainTIlePositions;
+    public List<Vector2Int> terrainTilePositions;
 
     public void InitialiseTilemapDatas(Tilemap groundMap, Tilemap terrainMap)
     {
         this.groundMap = groundMap;
         this.terrainMap = terrainMap;
 
+        Debug.Log(this.groundMap);
+
         InitialiseTilePositionData(groundMap, groundTilePositions);
-        InitialiseTilePositionData(terrainMap, terrainTIlePositions);
+        InitialiseTilePositionData(terrainMap, terrainTilePositions);
     }
 
     private void InitialiseTilePositionData(Tilemap tileMap, List<Vector2Int> availablePlaces)

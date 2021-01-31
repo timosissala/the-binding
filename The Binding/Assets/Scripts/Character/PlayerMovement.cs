@@ -36,8 +36,6 @@ public class PlayerMovement : Movement
         if (mouseMovement && mouseWorldPos != null && allowInput && isAlive)
         {
             MoveTowards(mouseWorldPos);
-
-            gameData.playerWorldPosition = transform.position;
         }
         else if (movementAxis.magnitude > 0 && isAlive)
         {
@@ -47,6 +45,8 @@ public class PlayerMovement : Movement
         {
             animatorController.StartIdleAnimation();
         }
+
+        gameData.playerWorldPosition = transform.position;
     }
 
     public void Interact(CallbackContext callbackContext)

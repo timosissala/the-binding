@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 7a09b85f645f2d7459673677ade3d9ae, type: 2}
-  maxSpeed: 3
+  maxSpeed: 4
   moveSensitivity: 1
   animatorController: {fileID: 5623716911212735424}
   patrolPoints:
@@ -174,6 +174,8 @@ MonoBehaviour:
   - {fileID: 0}
   monsterWaitTime: 1
   playerDetectRadius: 2
+  chaseSpeed: 15
+  patrolSpeed: 4
 --- !u!50 &5623716911349890593
 Rigidbody2D:
   serializedVersion: 4

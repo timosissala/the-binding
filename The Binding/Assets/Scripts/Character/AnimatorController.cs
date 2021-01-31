@@ -55,8 +55,6 @@ public class AnimatorController : MonoBehaviour
                     currentClip = playedClip;
                     animator.SetTrigger(playedClip.name);
                 }
-
-                Debug.Log("Playing animation " + playedClip.name);
             }
         }
     }
