@@ -31,7 +31,7 @@ public class MonsterMovement : Movement
     private void Start()
     {
         pathFinder = new PathFinder(gameData.groundMap);
-        isMoving = true;
+        mouseMovement = true;
 
         movementMode = MovementMode.Patrol;
         patrolIndex = 0;
@@ -39,7 +39,7 @@ public class MonsterMovement : Movement
 
     private void Update()
     {
-        if (isMoving && Time.timeSinceLevelLoad > monsterWaitTime)
+        if (mouseMovement && Time.timeSinceLevelLoad > monsterWaitTime)
         {
             DecideMovement();
 
@@ -74,8 +74,6 @@ public class MonsterMovement : Movement
 
             patrolTarget = patrolPoints[patrolIndex].position;
         }
-
-        Debug.Log(patrolTarget);
 
         MoveTowards(patrolTarget);
     }

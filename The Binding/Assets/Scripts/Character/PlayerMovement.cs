@@ -10,6 +10,8 @@ public class PlayerMovement : Movement
 
     private Vector2 mouseWorldPos;
 
+    private Vector2 movementAxis;
+
     private bool allowInput = false;
 
     private void Awake()
@@ -22,11 +24,15 @@ public class PlayerMovement : Movement
 
     private void Update()
     {
-        if (isMoving && mouseWorldPos != null && allowInput)
+        if (mouseMovement && mouseWorldPos != null && allowInput)
         {
             MoveTowards(mouseWorldPos);
 
             gameData.playerWorldPosition = transform.position;
+        }
+        else if (movementAxis.magnitude > 0)
+        {
+            Move(movementAxis);
         }
         else if (Time.timeSinceLevelLoad > 2.0f)
         {
@@ -38,7 +44,14 @@ public class PlayerMovement : Movement
     {
         bool moveButton = callbackContext.ReadValueAsButton();
 
-        isMoving = moveButton;
+        mouseMovement = moveButton;
+    }
+
+    public void AxisMovement(CallbackContext callbackContext)
+    {
+        movementAxis = callbackContext.ReadValue<Vector2>();
+
+        Debug.Log(movementAxis);
     }
 
     public void MousePosition(CallbackContext callbackContext)

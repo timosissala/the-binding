@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class TorchController : MonoBehaviour
 {
+    [SerializeField]
     private int torchFuel = 10;
     public int TorchFuel { get { return torchFuel; } set { torchFuel = value; SetTorchLight(); } }
 
@@ -13,6 +14,11 @@ public class TorchController : MonoBehaviour
     [SerializeField]
     private float torchDecayInterval = 5.0f;
     private MonoBehaviourTimer torchTimer;
+
+    [SerializeField]
+    private float torchInnerLightRadiusPerFuel;
+    [SerializeField]
+    private float torchOuterLightRadiusPerFuel;
 
     private void Start()
     {
@@ -40,9 +46,7 @@ public class TorchController : MonoBehaviour
             torchLight = GetComponent<Light2D>();
         }
 
-        torchLight.pointLightInnerRadius = Mathf.Clamp(TorchFuel / 6, 0.6f, 1.8f);
-        torchLight.pointLightOuterRadius = Mathf.Clamp(TorchFuel / 3, 1.2f, 3.6f);
-
-        torchLight.intensity = Mathf.Clamp(TorchFuel / 6, 0.8f, 1.5f);
+        torchLight.pointLightInnerRadius = torchInnerLightRadiusPerFuel * torchFuel;
+        torchLight.pointLightOuterRadius = torchOuterLightRadiusPerFuel * torchFuel;
     }
 }

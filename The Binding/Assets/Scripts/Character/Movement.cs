@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     protected AnimatorController animatorController;
 
-    protected bool isMoving;
+    protected bool mouseMovement;
 
     private void OnEnable()
     {
@@ -34,6 +34,15 @@ public class Movement : MonoBehaviour
         SetMoveAnimation(velocity);
 
         rb.velocity = velocity;
+    }
+
+    public void Move(Vector2 direction)
+    {
+        Vector2 velocity = direction * maxSpeed;
+
+        rb.velocity = velocity;
+
+        SetMoveAnimation(velocity);
     }
 
     protected void SetMoveAnimation(Vector2 velocity)
