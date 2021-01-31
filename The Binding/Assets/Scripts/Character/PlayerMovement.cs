@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerMovement : Movement
@@ -8,14 +9,22 @@ public class PlayerMovement : Movement
     [SerializeField]
     private new Camera camera;
 
+    [SerializeField]
+    private TorchController torchController;
+
     private Vector2 mouseWorldPos;
 
     private Vector2 movementAxis;
 
     private bool allowInput = false;
+    private bool isAlive = true;
+
+    public UnityEvent OnDeath;
 
     private void Awake()
     {
+        isAlive = true;
+
         if (camera == null)
         {
             camera = FindObjectOfType<Camera>();
@@ -24,13 +33,13 @@ public class PlayerMovement : Movement
 
     private void Update()
     {
-        if (mouseMovement && mouseWorldPos != null && allowInput)
+        if (mouseMovement && mouseWorldPos != null && allowInput && isAlive)
         {
             MoveTowards(mouseWorldPos);
 
             gameData.playerWorldPosition = transform.position;
         }
-        else if (movementAxis.magnitude > 0)
+        else if (movementAxis.magnitude > 0 && isAlive)
         {
             Move(movementAxis);
         }
@@ -62,5 +71,26 @@ public class PlayerMovement : Movement
     public void ToggleMovement(bool enabled)
     {
         allowInput = enabled;
+    }
+
+    private void Die()
+    {
+        isAlive = false;
+
+        OnDeath?.Invoke();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Fuel")
+        {
+            collision.gameObject.SetActive(false);
+
+            torchController.TorchFuel += 2;
+        }
+        else if (collision.tag == "Monster")
+        {
+            Die();
+        }
     }
 }

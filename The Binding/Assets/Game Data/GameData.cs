@@ -12,21 +12,17 @@ public class GameData : ScriptableObject
 
     public Tilemap groundMap;
     public Tilemap terrainMap;
-    public Tilemap objectMap;
 
     public List<Vector2Int> groundTilePositions;
     public List<Vector2Int> terrainTIlePositions;
-    public List<Vector2Int> objectTilePositions;
 
-    public void InitialiseTilemapDatas(Tilemap groundMap, Tilemap terrainMap, Tilemap objectMap)
+    public void InitialiseTilemapDatas(Tilemap groundMap, Tilemap terrainMap)
     {
         this.groundMap = groundMap;
         this.terrainMap = terrainMap;
-        this.objectMap = objectMap;
 
         InitialiseTilePositionData(groundMap, groundTilePositions);
         InitialiseTilePositionData(terrainMap, terrainTIlePositions);
-        InitialiseTilePositionData(objectMap, objectTilePositions);
     }
 
     private void InitialiseTilePositionData(Tilemap tileMap, List<Vector2Int> availablePlaces)
@@ -52,7 +48,7 @@ public class GameData : ScriptableObject
         }
     }
 
-    public Vector3Int WorldToTIlePosition(Vector2 worldPos, Tilemap tilemap)
+    public Vector3Int WorldToTilePosition(Vector2 worldPos, Tilemap tilemap)
     {
         return tilemap.WorldToCell(worldPos);
     }
