@@ -109,7 +109,7 @@ public class PlayerMovement : Movement
     {
         int nextLevelIndex = levelData.currentLevel + 1;
 
-        if (levelData.Levels.Length - 1 > nextLevelIndex)
+        if (levelData.Levels.Length > nextLevelIndex)
         {
             levelData.currentLevel = nextLevelIndex;
             SceneManager.LoadScene(levelData.Levels[nextLevelIndex].levelName);

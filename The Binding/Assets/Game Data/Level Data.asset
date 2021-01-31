@@ -17,8 +17,8 @@ MonoBehaviour:
     winCondition: 0
   - levelName: Level2
     winCondition: 0
-  - levelName: Final Level
+  - levelName: FinalLevel
     winCondition: 0
-  currentLevel: 0
+  currentLevel: 1
   defaultLevel: Level1
   mainMenu: MainMenu

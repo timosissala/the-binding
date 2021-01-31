@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchFuel: 10
-  torchDecayInterval: 10
+  torchDecayInterval: 15
   torchInnerLightRadiusPerFuel: 0.25
   torchOuterLightRadiusPerFuel: 0.5
 --- !u!114 &3972392544585932543
