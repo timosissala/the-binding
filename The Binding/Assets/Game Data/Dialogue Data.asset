@@ -16,12 +16,26 @@ MonoBehaviour:
   - name: Awakening
     dialogues:
     - text: Huh. Where am I?...
-      icon: {fileID: 0}
+      icon: {fileID: 8411857913625381795, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
       OnDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
     - text: What is this place?
-      icon: {fileID: 0}
+      icon: {fileID: -3999269061638664574, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - text: Atleast I still have my trusty lantern
+      icon: {fileID: -3999269061638664574, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - text: I need to find a way out of here.
+      icon: {fileID: 8411857913625381795, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
       OnDialogueFinished:
         m_PersistentCalls:
           m_Calls: []
@@ -29,6 +43,32 @@ MonoBehaviour:
     dialogues:
     - text: Huh. I dozed off again..
       icon: {fileID: 0}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: Surrounded
+    dialogues:
+    - text: I am surrounded
+      icon: {fileID: -3999269061638664574, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - text: There is no way out
+      icon: {fileID: 8411857913625381795, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - text: I quess this is it.
+      icon: {fileID: 8411857913625381795, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
+      OnDialogueFinished:
+        m_PersistentCalls:
+          m_Calls: []
+    - text: Good bye cruel world
+      icon: {fileID: 8411857913625381795, guid: 3145e025f3abfb343bf5f8de8f321118,
+        type: 3}
       OnDialogueFinished:
         m_PersistentCalls:
           m_Calls: []

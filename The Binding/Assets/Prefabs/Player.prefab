@@ -1005,6 +1005,7 @@ MonoBehaviour:
   animatorController: {fileID: 8070336563076820572}
   camera: {fileID: 3652742757341554942}
   torchController: {fileID: 4494982003880663751}
+  levelData: {fileID: 11400000, guid: 180627f677aea624abac62e0b54eb71e, type: 2}
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -1019,6 +1020,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  dialogueManager: {fileID: 9097365963852837555}
 --- !u!50 &8629248246700660949
 Rigidbody2D:
   serializedVersion: 4
@@ -2164,7 +2166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8029387, g: 0.08018869, b: 1, a: 0.392}
+  m_Color: {r: 0.9811321, g: 0.91945535, b: 0.6247775, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2420,16 +2422,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: I am a dialogue panel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a3c388b7ab025934492dc4a3d4e2b6a6, type: 2}
-  m_sharedMaterial: {fileID: 4235155934382353335, guid: a3c388b7ab025934492dc4a3d4e2b6a6,
+  m_fontAsset: {fileID: 11400000, guid: bf1e774978e097f45967ddf9bb4e5b3e, type: 2}
+  m_sharedMaterial: {fileID: 1904138694087264774, guid: bf1e774978e097f45967ddf9bb4e5b3e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
