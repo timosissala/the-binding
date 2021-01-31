@@ -1024,7 +1024,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1534,7 +1534,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8559306581729617750, guid: 05f982687e0ed5d47ab3c9dbef7c8404,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 280361018411586839}
-  defaultState: {fileID: 7400000, guid: 38ecbbe9a8092b84aa4221ae158d3c06, type: 2}
+  defaultState: {fileID: 7400000, guid: a4f9dc54345b54342b514cdbaddce9b8, type: 2}
 --- !u!1 &8126591375481217688
 GameObject:
   m_ObjectHideFlags: 0
