@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
-    public Vector2 playerWorldPosition;
+    public Vector2 playerWorldPosition = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
 
     public List<Vector2> pickupWorldPositions;
 

@@ -41,7 +41,6 @@ public class PathFinder {
             closedList.Add(currentNode);
 
             if (currentNode == targetNode) {
-                Debug.Log("path found");
                 pathFound = true;
                 direction = GetPathDirection(startNode, currentNode);
             }
@@ -96,19 +95,23 @@ public class PathFinder {
     private List<Node> GetNeighboringNodes(Node currentNode) {
         List<Node> neighbourNodes = new List<Node>();
 
-        int x = currentNode.x;
-        int y = currentNode.y;
+        if (currentNode != null)
+        {
+            int x = currentNode.x - xMin;
+            int y = currentNode.y - yMin;
 
-        for (int yy = y - 1; yy <= y + 1; yy++) {
-            for (int xx = x - 1; xx <= x + 1; xx++)
+            for (int yy = y - 1; yy <= y + 1; yy++)
             {
-                if (xx >= 0 && xx < nodes.GetLength(1) && yy >= 0 && yy < nodes.GetLength(0))
+                for (int xx = x - 1; xx <= x + 1; xx++)
                 {
-                    Node neighbourNode = nodes[yy, xx];
-
-                    if (neighbourNode != null)
+                    if (xx >= 0 && xx < nodes.GetLength(1) && yy >= 0 && yy < nodes.GetLength(0))
                     {
-                        neighbourNodes.Add(neighbourNode);
+                        Node neighbourNode = nodes[yy, xx];
+
+                        if (neighbourNode != null)
+                        {
+                            neighbourNodes.Add(neighbourNode);
+                        }
                     }
                 }
             }
